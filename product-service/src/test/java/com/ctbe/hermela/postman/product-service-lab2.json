@@ -1,0 +1,15 @@
+{
+	"info": {
+		"name": "product-service-lab2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{ "name": "List All Products", "request": { "method": "GET", "url": { "raw": "http://localhost:8080/api/v1/products" } } },
+		{ "name": "Get Product by ID", "request": { "method": "GET", "url": { "raw": "http://localhost:8080/api/v1/products/1" } } },
+		{ "name": "Create Product - Success", "request": { "method": "POST", "url": { "raw": "http://localhost:8080/api/v1/products" }, "body": { "mode": "raw", "raw": "{\"name\":\"Headphones\",\"price\":89.99,\"stockQty\":50,\"category\":\"Audio\"}", "options": { "raw": { "language": "json" } } } } },
+		{ "name": "Create Product - Fail", "request": { "method": "POST", "url": { "raw": "http://localhost:8080/api/v1/products" }, "body": { "mode": "raw", "raw": "{\"name\":\"\",\"price\":10.0,\"stockQty\":1}", "options": { "raw": { "language": "json" } } } } },
+		{ "name": "Update Product", "request": { "method": "PUT", "url": { "raw": "http://localhost:8080/api/v1/products/1" }, "body": { "mode": "raw", "raw": "{\"name\":\"Laptop\",\"price\":1200.0}", "options": { "raw": { "language": "json" } } } } },
+		{ "name": "Delete Product", "request": { "method": "DELETE", "url": { "raw": "http://localhost:8080/api/v1/products/1" } } },
+		{ "name": "Delete Product - Not Found", "request": { "method": "DELETE", "url": { "raw": "http://localhost:8080/api/v1/products/9999" } } }
+	]
+}
