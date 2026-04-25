@@ -17,11 +17,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+          
       - name: Build, verify, and run all tests
+       
+        working-directory: product-service
         run: mvn verify
+        
       - name: Upload Surefire test reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: surefire-reports
-          path: target/surefire-reports/
+         
+          path: product-service/target/surefire-reports/
